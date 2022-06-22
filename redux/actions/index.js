@@ -1,4 +1,4 @@
-import {USER_STATE_CHANGE } from '../constants/index';
+import { USER_STATE_CHANGE } from '../constants/index';
 import firebase from "firebase/compat";
 
 
