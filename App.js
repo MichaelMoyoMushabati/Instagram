@@ -27,21 +27,22 @@ const firebaseConfig = {
     measurementId: "G-46C5L6TCG7"
 };
 
-if(firebase.apps.length === 0){ //if the firebase app is not initialized, initialize it
+ //if the firebase app is not initialized, initialize it
+if(firebase.apps.length === 0){
     firebase.initializeApp(firebaseConfig);
 }
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+//Screens for the app 
 import LandingScreen from './components/auth/Landing'
 import RegistrationScreen from './components/auth/Register'
 import MainScreen from './components/Main';
 import LoginScreen from './components/auth/Login';
+import AddScreen from './components/main/Add';
 
 const Stack =  createStackNavigator();
-
-
 
 export class App extends Component {
   
@@ -94,6 +95,7 @@ export class App extends Component {
         <NavigationContainer>
           <Stack.Navigator initialRouteName = "Main">
               <Stack.Screen  name="Main" component={MainScreen} options={{ headerShown: false }}/>
+              <Stack.Screen  name="Add" component={AddScreen} />
           </Stack.Navigator> 
         </NavigationContainer>       
       </Provider>
